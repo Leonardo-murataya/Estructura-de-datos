@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Inventario con Vectores</h1>
+    </header>
+
+    <form class="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" id="cantidad" name="cantidad" placeholder="Cantidad">
+        <label for="costo">Costo:</label>
+        <input type="text" id="costo" name="costo" placeholder="Costo">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Codigo">
+        <button type="button" id="btnAgregar">Agregar</button>
+        <button type="button" id="btnBuscar">Buscar por código</button>
+        <button type="button" id="btnEliminar">Eliminar por código</button>
+        <button type="button" id="btnListar">Listar</button>
+        <button type="button" id="btnExtraerPrimero">Extraer Primero</button>
+        <button type="button" id="btnExtraerUltimo">Extraer Último</button>
+        <button type="button" id="btnListarInverso">Listar Inverso</button>
+    </form>
+
+    <div id="detalles"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
