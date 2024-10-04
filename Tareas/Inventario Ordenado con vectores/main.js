@@ -79,28 +79,16 @@ class Inventario {
 
     recuperarListado() {
         let listado = '';
-        let temp = [];
-        while (this.datos.length > 0) {
-            let producto = this.datos.pop();
-            listado += producto.info() + '<br><br>';
-            temp.push(producto);
-        }
-        while (temp.length > 0) {
-            this.datos.push(temp.pop());
+        for (let i = 0; i < this.datos.length; i++) {
+            listado += this.datos[i].info() + '<br><br>';
         }
         return listado;
     }
 
     recuperarListadoInverso() {
         let listadoInverso = '';
-        let temp = [];
-        while (this.datos.length > 0) {
-            temp.push(this.datos.pop());
-        }
-        while (temp.length > 0) {
-            let producto = temp.pop();
-            listadoInverso += producto.info() + '<br><br>';
-            this.datos.push(producto);
+        for (let i = this.datos.length - 1; i >= 0; i--) {
+            listadoInverso += this.datos[i].info() + '<br><br>';
         }
         return listadoInverso;
     }
@@ -194,7 +182,7 @@ function mostrarAlerta(mensaje) {
 
 function mostrarDetalles(producto) {
     let div = document.getElementById("detalles");
-    div.innerHTML = ''; // Limpiar contenido previo
+    div.innerHTML = '';
     if (typeof producto === "string") {
         div.innerHTML = `<p>${producto}</p>`;
     } else {
