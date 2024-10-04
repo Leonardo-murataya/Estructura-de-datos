@@ -65,7 +65,7 @@ class Inventario {
 
             this.datos.length = this.datos.length - 1
 
-            return primero;
+            return posicion;
         }
     }
 
@@ -147,7 +147,7 @@ document.getElementById("btnListar").addEventListener("click", () => {
 });
 
 document.getElementById("btnExtraerPrimero").addEventListener("click", () => {
-    const producto = inventario.extraerUltimo();
+    const producto = inventario.extraerPrimero();
     if (producto) {
         mostrarDetalles(`Producto extraído: ${producto.info()}`);
     } else {
@@ -168,7 +168,7 @@ document.getElementById("btnListarInverso").addEventListener("click", () => {
     mostrarDetalles(inventario.recuperarListadoInverso());
 });
 
-function mostrarAlerta(mensaje) {
+const mostrarAlerta = mensaje => {
     let div = document.createElement("div");
     div.classList.add("alerta");
     div.innerHTML = `<p>${mensaje}</p>`;
@@ -177,10 +177,10 @@ function mostrarAlerta(mensaje) {
     setTimeout(() => {
         div.remove();
     }, 3500);
-}
+};
 
-function mostrarDetalles(producto) {
-    let div = document.getElementById("detalles");
+const mostrarDetalles = producto => {
+    const div = document.getElementById("detalles");
     div.innerHTML = '';
     if (typeof producto === "string") {
         div.innerHTML = `<p>${producto}</p>`;
@@ -188,4 +188,4 @@ function mostrarDetalles(producto) {
         div.innerHTML = `<p id="producto-${producto.codigo}">${producto.info()}</p>`;
     }
     div.classList.add("activo");
-}
+};
