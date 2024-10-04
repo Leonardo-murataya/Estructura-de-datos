@@ -42,32 +42,31 @@ class Inventario {
     }
 
     eliminar(codigo) {
-        let temp = [];
-        while (this.datos.length > 0) {
-            let producto = this.datos.pop();
-            if (producto.codigo !== codigo) {
-                temp.push(producto);
+        let posicion = this.buscar(codigo)
+        if (posicion != null) {
+            for (let i = posicion; i < this.datos.length; i++){
+                this.datos[i] = this.datos[i + 1]
             }
+            this.datos.pop()
+        } else {
+            return null
         }
-        while (temp.length > 0) {
-            this.datos.push(temp.pop());
-        }
-        this.ordenar();
     }
 
     extraerPrimero() {
         if (this.datos.length === 0) {
             return null;
+        } else {
+            let posicion = this.datos[0]
+
+            for (let i = 0; i < this.datos.length-1; i++){
+                this.datos[i] = this.datos[i + 1]
+            }
+
+            this.datos.length = this.datos.length - 1
+
+            return primero;
         }
-        let temp = [];
-        while (this.datos.length > 1) {
-            temp.push(this.datos.pop());
-        }
-        let primero = this.datos.pop();
-        while (temp.length > 0) {
-            this.datos.push(temp.pop());
-        }
-        return primero;
     }
 
     extraerUltimo() {
@@ -148,7 +147,7 @@ document.getElementById("btnListar").addEventListener("click", () => {
 });
 
 document.getElementById("btnExtraerPrimero").addEventListener("click", () => {
-    const producto = inventario.extraerPrimero();
+    const producto = inventario.extraerUltimo();
     if (producto) {
         mostrarDetalles(`Producto extraído: ${producto.info()}`);
     } else {

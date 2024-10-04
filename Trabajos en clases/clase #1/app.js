@@ -50,11 +50,11 @@ class Clase {
         return resultado;
     }
 
-    buscar(numeroCuenta) {
-        let aux = this.inicio
-
-        while (aux.numeroCuenta ==)
-    }
+    // buscar(numeroCuenta) {
+    //     let aux = this.inicio
+    //
+    //     while (aux.numeroCuenta ==)
+    // }
 }
 
 let a = new Alumnos('Juan', 123);
