@@ -54,13 +54,13 @@ class Clase {
         }
     }
 
-    extraerPirmero(numeroCuenta) {
+    extraerPirmero() {
         let aux = this.inicio
         this.inicio = this.inicio.siguiente
         return aux
     }
 
-    extraerUltimo(numeroCuenta) {
+    extraerUltimo() {
         let aux = this.inicio
         while (aux.siguiente.siguiente !== null) {
             aux = aux.siguiente
