@@ -29,13 +29,6 @@ class Clase {
         } else {
             this._agregateAlumno(alumnos, this.inicio);
         }
-        // if (this.inicio == null) {
-        //     this.inicio = alumnos;
-        //     this.final = this.inicio;
-        // } else {
-        //     this.final.siguiente = alumnos;
-        //     this.final = alumnos;
-        // }
     }
 
 
@@ -50,18 +43,31 @@ class Clase {
         return resultado;
     }
 
-    // buscar(numeroCuenta) {
-    //     let aux = this.inicio
-    //
-    //     while (aux.numeroCuenta ==)
-    // }
-}
+    buscar(numeroCuenta) {
+        let aux = this.inicio
 
-let a = new Alumnos('Juan', 123);
-let b = new Alumnos('Pedro', 456);
-let c = new Alumnos('Maria', 789);
-let e = new Clase()
-e.agregarAlumno(a);
-e.agregarAlumno(b);
-e.agregarAlumno(c);
-console.log(e.listado());
+        while (aux.siguiente !== null) {
+            if (aux.numeroCuenta === numeroCuenta) {
+                return aux
+            }
+            aux = aux.siguiente
+        }
+    }
+
+    extraerPirmero() {
+        let aux = this.inicio
+        this.inicio = this.inicio.siguiente
+        return aux
+    }
+
+    extraerUltimo() {
+        let aux = this.inicio
+        while (aux.siguiente.siguiente !== null) {
+            aux = aux.siguiente
+        }
+        let ultimo = aux.siguiente
+        aux.siguiente = null
+        return ultimo
+    }
+
+}
