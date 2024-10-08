@@ -43,46 +43,6 @@ class Clase {
         return resultado;
     }
 
-    listado2() {
-        let aux = this.inicio
-
-        if (aux.siguiente !== null) {
-            return this._listate(aux)
-        } else {
-            return aux.info()
-        }
-    }
-
-    _listate(aux) {
-        let resultado = ''
-
-        if (aux !== null) {
-            resultado += aux.info() + '\n'
-            return resultado + this._listate(aux.siguiente)
-        }
-        return resultado
-    }
-
-    listado3() {
-        let aux = this.inicio
-
-        if (aux.siguiente !== null) {
-            return  this._listateAlreves(aux)
-        } else {
-            return aux.info()
-        }
-    }
-
-    _listateAlreves(aux) {
-        let resultado = ''
-
-        if (aux !== null) {
-            resultado += aux.info() + '\n'
-            return this._listateAlreves(aux.siguiente) + resultado
-        }
-        return resultado
-    }
-
     buscar(numeroCuenta) {
         let aux = this.inicio
 
@@ -111,15 +71,3 @@ class Clase {
     }
 
 }
-
-let g = new Clase()
-let a = new Alumnos('Juan', 123)
-let b = new Alumnos('Pedro', 124)
-let c = new Alumnos('Maria', 125)
-
-g.agregarAlumno(a)
-g.agregarAlumno(b)
-g.agregarAlumno(c)
-
-console.log(g.listado2())
-console.log(g.listado3())
