@@ -63,7 +63,7 @@ class Clase {
         return resultado
     }
 
-    listado3() {
+    listarInverso() {
         let aux = this.inicio
 
         if (aux.siguiente !== null) {
@@ -122,4 +122,4 @@ g.agregarAlumno(b)
 g.agregarAlumno(c)
 
 console.log(g.listado2())
-console.log(g.listado3())
+console.log(g.listarInverso())
