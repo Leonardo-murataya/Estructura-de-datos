@@ -57,18 +57,6 @@ class inventario {
             return eliminado;
         }
 
-        let aux = this.inicio;
-        while (aux.siguiente !== null && aux.siguiente.codigo !== codigo) {
-            aux = aux.siguiente;
-        }
-
-        if (aux.siguiente !== null) {
-            let eliminado = aux.siguiente;
-            aux.siguiente = aux.siguiente.siguiente;
-            eliminado.siguiente = null;
-            return eliminado;
-        }
-
         return null; // No se encontró el producto
     }
 
