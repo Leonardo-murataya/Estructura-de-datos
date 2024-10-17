@@ -133,6 +133,6 @@ g.agregarAlumno(t)
 
 
 let x = new Alumnos('X', 121);
-// g.agregarAntesDe(x, 122);
+g.agregarAntesDe(x, 122);
 
 console.log(g.listado())
