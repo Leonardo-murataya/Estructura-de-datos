@@ -5,10 +5,6 @@ class transporte {
         this.siguiente = null;
         this.anterior = null;
     }
-
-    toString() {
-        return this.nombre + ' -> ' + this.minutos + 'min';
-    }
 }
 
 class listaCircular {
