@@ -70,7 +70,7 @@ arbol.agregar(7);
 arbol.agregar(12);
 arbol.agregar(18);
 
-console.log(arbol);
+console.log(arbol); 
 
 console.log(arbol.preOrden());
 
